@@ -1,0 +1,1819 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>⛩️ 日本伊勢志摩・名古屋 6天5夜 家族自由行 2026</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Noto+Serif+TC:wght@400;700&display=swap');
+
+    :root {
+      --primary: #c0392b;
+      --primary-light: #e74c3c;
+      --secondary: #2c3e50;
+      --accent: #e67e22;
+      --gold: #f39c12;
+      --teal: #16a085;
+      --blue: #2980b9;
+      --bg-light: #faf8f5;
+      --bg-card: #ffffff;
+      --text-main: #2c3e50;
+      --text-sub: #7f8c8d;
+      --border: #ecf0f1;
+      --shadow: 0 8px 32px rgba(0,0,0,0.10);
+      --shadow-hover: 0 16px 48px rgba(0,0,0,0.18);
+      --radius: 16px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+      background: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.8;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #0f3460 70%, #533483 100%);
+      min-height: 100vh;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; position: relative; overflow: hidden; padding: 40px 20px;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: url('https://i.ytimg.com/vi/FHGC1FPxLwE/maxresdefault.jpg') center/cover no-repeat;
+      opacity: 0.18; filter: blur(2px);
+    }
+    .hero-particles { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+    .particle { position: absolute; border-radius: 50%; animation: float 8s infinite ease-in-out; opacity: 0.15; }
+    @keyframes float { 0%,100% { transform: translateY(0) rotate(0deg);} 50% { transform: translateY(-30px) rotate(180deg);} }
+
+    .hero-badge {
+      background: rgba(192, 57, 43, 0.85); color: white;
+      padding: 6px 20px; border-radius: 50px;
+      font-size: 0.8rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
+      margin-bottom: 24px; position: relative; backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .hero-title {
+      font-family: 'Noto Serif TC', serif;
+      font-size: clamp(2rem, 6vw, 4.5rem); font-weight: 900; color: white;
+      line-height: 1.2; margin-bottom: 16px; position: relative;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+    .hero-title span { color: #f1c40f; }
+    .hero-subtitle {
+      font-size: clamp(1rem, 2.5vw, 1.4rem); color: rgba(255,255,255,0.85);
+      margin-bottom: 40px; position: relative; letter-spacing: 2px;
+    }
+    .hero-info-grid {
+      display: flex; flex-wrap: wrap; gap: 16px; justify-content: center;
+      position: relative; margin-bottom: 40px;
+    }
+    .hero-info-card {
+      background: rgba(255,255,255,0.12); backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.25); border-radius: 14px;
+      padding: 16px 24px; text-align: center; color: white;
+      min-width: 130px; transition: all 0.3s;
+    }
+    .hero-info-card:hover { background: rgba(255,255,255,0.22); transform: translateY(-4px); }
+    .hero-info-card .icon { font-size: 1.8rem; margin-bottom: 4px; }
+    .hero-info-card .label { font-size: 0.7rem; letter-spacing: 2px; opacity: 0.75; text-transform: uppercase; margin-bottom: 4px; }
+    .hero-info-card .value { font-size: 0.95rem; font-weight: 700; }
+    .scroll-hint {
+      position: relative; color: rgba(255,255,255,0.6);
+      font-size: 0.8rem; letter-spacing: 2px; animation: bounce 2s infinite; cursor: pointer;
+    }
+    @keyframes bounce { 0%,100% { transform: translateY(0);} 50% { transform: translateY(8px);} }
+
+    /* ===== NAV ===== */
+    .sticky-nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(44, 62, 80, 0.97); backdrop-filter: blur(12px);
+      padding: 0 20px; border-bottom: 2px solid var(--primary);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+    .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; gap: 0; overflow-x: auto; scrollbar-width: none; }
+    .nav-inner::-webkit-scrollbar { display: none; }
+    .nav-btn {
+      flex-shrink: 0; padding: 14px 18px; color: rgba(255,255,255,0.7);
+      text-decoration: none; font-size: 0.82rem; font-weight: 500; transition: all 0.3s;
+      border-bottom: 3px solid transparent; white-space: nowrap;
+    }
+    .nav-btn:hover { color: white; border-bottom-color: var(--primary); }
+
+    /* ===== SECTION TITLE ===== */
+    .section-title { text-align: center; margin-bottom: 40px; }
+    .section-title h2 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: clamp(1.5rem, 4vw, 2.4rem); font-weight: 700;
+      color: white; margin-bottom: 8px;
+    }
+    .section-title .sub { color: rgba(255,255,255,0.7); font-size: 0.95rem; }
+
+    /* ===== TICKET SECTION ===== */
+    .ticket-section { background: linear-gradient(135deg, #c0392b, #922b21); padding: 60px 20px; }
+    .ticket-inner { max-width: 1100px; margin: 0 auto; }
+    .ticket-card {
+      background: white; border-radius: 20px; padding: 36px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+      display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+    }
+    @media (max-width: 700px) { .ticket-card { grid-template-columns: 1fr; } }
+    .ticket-left { display: flex; flex-direction: column; gap: 12px; }
+    .ticket-name { font-family: 'Noto Serif TC', serif; font-size: 1.5rem; font-weight: 900; color: var(--primary); line-height: 1.3; }
+    .ticket-jp { font-size: 0.9rem; color: var(--text-sub); letter-spacing: 1px; }
+    .ticket-desc { font-size: 0.92rem; color: var(--text-main); line-height: 1.7; }
+    .ticket-highlight {
+      background: #fff5f5; border-left: 4px solid var(--primary);
+      border-radius: 8px; padding: 12px 16px; font-size: 0.88rem;
+      color: var(--primary); font-weight: 600;
+    }
+    .ticket-price-box {
+      background: linear-gradient(135deg, var(--gold), var(--accent));
+      color: white; border-radius: 12px; padding: 14px 18px; text-align: center;
+    }
+    .ticket-price-box .label { font-size: 0.78rem; letter-spacing: 2px; opacity: 0.9; }
+    .ticket-price-box .price { font-size: 1.6rem; font-weight: 900; }
+    .ticket-price-box .note { font-size: 0.78rem; opacity: 0.92; }
+    .ticket-right { display: flex; flex-direction: column; gap: 10px; }
+    .ticket-item {
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 10px 14px; background: #f8f9fa; border-radius: 10px;
+      font-size: 0.88rem; line-height: 1.5;
+    }
+    .ticket-item .item-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 2px; }
+    .ticket-item .item-text strong { display: block; color: var(--secondary); margin-bottom: 2px; }
+
+    .savings-table {
+      background: white; border-radius: 14px; padding: 22px; margin-top: 24px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+    }
+    .savings-table h4 {
+      font-size: 1rem; color: var(--primary); margin-bottom: 14px; display: flex; align-items: center; gap: 6px;
+    }
+    .savings-table table { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
+    .savings-table th, .savings-table td { padding: 8px 10px; border-bottom: 1px solid #f0f0f0; text-align: left; }
+    .savings-table th { background: #fafafa; color: var(--secondary); font-weight: 700; }
+    .savings-table td.num { text-align: right; font-family: monospace; font-weight: 600; }
+    .savings-table tfoot td { font-weight: 700; color: var(--primary); border-top: 2px solid var(--primary); border-bottom: none; }
+
+    /* ===== FLIGHT INFO ===== */
+    .flight-section { background: var(--secondary); padding: 50px 20px; }
+    .flight-grid { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    @media (max-width: 700px) { .flight-grid { grid-template-columns: 1fr; } }
+    .flight-card {
+      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 16px; padding: 24px; color: white;
+    }
+    .flight-card .flight-type {
+      font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase;
+      color: rgba(255,255,255,0.5); margin-bottom: 12px;
+    }
+    .flight-route { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+    .flight-city { font-size: 1.6rem; font-weight: 900; letter-spacing: 1px; }
+    .flight-arrow { font-size: 1.4rem; opacity: 0.5; flex-shrink: 0; }
+    .flight-times { display: flex; justify-content: space-between; align-items: flex-end; }
+    .flight-time-info .time { font-size: 1.3rem; font-weight: 700; color: #f1c40f; }
+    .flight-time-info .date { font-size: 0.78rem; opacity: 0.7; }
+    .flight-number { font-size: 0.8rem; background: rgba(192,57,43,0.5); padding: 4px 12px; border-radius: 20px; letter-spacing: 1px; }
+
+    /* ===== MAIN CONTENT ===== */
+    .main-content { max-width: 1200px; margin: 0 auto; padding: 40px 20px 60px; }
+
+    /* ===== DAY SECTION ===== */
+    .day-section { margin-bottom: 70px; }
+    .day-header {
+      display: flex; align-items: center; gap: 20px; margin-bottom: 30px;
+      padding-bottom: 16px; border-bottom: 2px solid var(--border);
+    }
+    .day-number {
+      flex-shrink: 0; width: 72px; height: 72px; border-radius: 50%;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      color: white; font-weight: 900; box-shadow: var(--shadow);
+    }
+    .day-number .day-text { font-size: 0.62rem; letter-spacing: 2px; text-transform: uppercase; opacity: 0.9; }
+    .day-number .day-num { font-size: 2rem; line-height: 1; }
+    .day-info h2 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: clamp(1.2rem, 3vw, 1.8rem); font-weight: 700;
+      color: var(--secondary); margin-bottom: 4px;
+    }
+    .day-info .day-meta { font-size: 0.85rem; color: var(--text-sub); display: flex; flex-wrap: wrap; gap: 12px; }
+    .day-info .day-meta span { display: flex; align-items: center; gap: 4px; }
+
+    .day1 .day-number { background: linear-gradient(135deg, #667eea, #764ba2); }
+    .day2 .day-number { background: linear-gradient(135deg, #FC466B, #3F5EFB); }
+    .day3 .day-number { background: linear-gradient(135deg, #0093E9, #80D0C7); }
+    .day4 .day-number { background: linear-gradient(135deg, #11998e, #38ef7d); }
+    .day5 .day-number { background: linear-gradient(135deg, #e05d3b, #f7a35c); }
+    .day6 .day-number { background: linear-gradient(135deg, #f7971e, #ffd200); }
+
+    /* ===== ATTRACTION CARD ===== */
+    .attraction-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 28px; margin-bottom: 30px;
+    }
+    .attraction-card {
+      background: var(--bg-card); border-radius: var(--radius); overflow: hidden;
+      box-shadow: var(--shadow); transition: all 0.3s ease; position: relative;
+    }
+    .attraction-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-6px); }
+    .card-img-wrap { position: relative; height: 220px; overflow: hidden; background: #e8e8e8; }
+    .card-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .attraction-card:hover .card-img-wrap img { transform: scale(1.06); }
+    .card-img-overlay {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 100%);
+      padding: 20px 16px 12px;
+    }
+    .card-time-badge {
+      position: absolute; top: 12px; right: 12px;
+      background: rgba(0,0,0,0.7); color: white; padding: 4px 10px;
+      border-radius: 20px; font-size: 0.75rem; font-weight: 600; backdrop-filter: blur(4px);
+    }
+    .card-category {
+      display: inline-block; background: var(--primary); color: white;
+      font-size: 0.68rem; padding: 3px 10px; border-radius: 12px;
+      letter-spacing: 1px; font-weight: 600; margin-bottom: 4px; text-transform: uppercase;
+    }
+    .card-category.shop { background: var(--blue); }
+    .card-category.food { background: var(--accent); }
+    .card-category.nature { background: var(--teal); }
+    .card-category.shrine { background: var(--primary); }
+    .card-category.theme { background: #8e44ad; }
+    .card-title-on-img { font-size: 1rem; font-weight: 700; color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+    .card-body { padding: 18px 20px 20px; }
+    .card-name {
+      font-family: 'Noto Serif TC', serif; font-size: 1.1rem; font-weight: 700;
+      color: var(--secondary); margin-bottom: 4px;
+    }
+    .card-name-jp { font-size: 0.78rem; color: var(--text-sub); margin-bottom: 10px; }
+    .card-desc { font-size: 0.88rem; color: #555; line-height: 1.75; margin-bottom: 14px; }
+    .card-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .card-tag {
+      background: #f0f4f8; color: var(--secondary);
+      padding: 3px 10px; border-radius: 20px; font-size: 0.75rem;
+      font-weight: 500; border: 1px solid #e0e8f0;
+    }
+    .card-tag.free { background: #e8f5e9; color: #2e7d32; border-color: #a5d6a7; }
+    .card-tag.must { background: #fff3e0; color: #e65100; border-color: #ffcc80; }
+
+    /* ===== TIMELINE ===== */
+    .timeline { position: relative; padding-left: 30px; margin-bottom: 24px; }
+    .timeline::before {
+      content: ''; position: absolute; left: 11px; top: 0; bottom: 0;
+      width: 2px; background: linear-gradient(to bottom, var(--primary), var(--accent));
+    }
+    .timeline-item { position: relative; margin-bottom: 16px; }
+    .timeline-item::before {
+      content: ''; position: absolute; left: -23px; top: 6px;
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--primary); border: 2px solid white;
+      box-shadow: 0 0 0 2px var(--primary);
+    }
+    .timeline-time { font-size: 0.78rem; font-weight: 700; color: var(--primary); letter-spacing: 1px; margin-bottom: 2px; }
+    .timeline-content { font-size: 0.9rem; color: var(--text-main); line-height: 1.6; }
+    .timeline-content strong { color: var(--secondary); }
+    .timeline-content .ticket-tag {
+      display: inline-block; background: #fff3e0; color: #e65100;
+      font-size: 0.72rem; padding: 1px 8px; border-radius: 10px; margin-left: 6px;
+      font-weight: 600;
+    }
+    .timeline-content .free-tag {
+      display: inline-block; background: #e8f5e9; color: #2e7d32;
+      font-size: 0.72rem; padding: 1px 8px; border-radius: 10px; margin-left: 6px;
+      font-weight: 600;
+    }
+
+    /* ===== TIP BOX ===== */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e1, #fffde7);
+      border-left: 4px solid var(--gold); border-radius: 0 12px 12px 0;
+      padding: 16px 20px; margin: 16px 0; font-size: 0.88rem;
+      color: #5d4037; line-height: 1.7;
+    }
+    .tip-box .tip-title { font-weight: 700; color: #e65100; margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
+    .tip-box.warn { background: linear-gradient(135deg, #ffebee, #fff5f5); border-left-color: var(--primary); color: #5d2727; }
+    .tip-box.warn .tip-title { color: var(--primary); }
+    .tip-box.info { background: linear-gradient(135deg, #e3f2fd, #f5fbff); border-left-color: var(--blue); color: #1a3a52; }
+    .tip-box.info .tip-title { color: var(--blue); }
+
+    /* ===== HOTEL BANNER ===== */
+    .hotel-banner {
+      background: linear-gradient(135deg, #2c3e50, #34495e);
+      border-radius: var(--radius); padding: 20px 24px; color: white;
+      display: flex; align-items: center; gap: 20px; margin-bottom: 28px;
+    }
+    .hotel-icon { font-size: 2.5rem; flex-shrink: 0; }
+    .hotel-info h4 { font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
+    .hotel-info p { font-size: 0.85rem; opacity: 0.85; line-height: 1.6; }
+
+    /* ===== SECTION DIVIDER ===== */
+    .section-divider {
+      height: 4px; background: linear-gradient(to right, var(--primary), var(--accent), var(--gold));
+      border-radius: 2px; margin: 50px 0; opacity: 0.4;
+    }
+
+    /* ===== HOTEL RECOMMENDATION ===== */
+    .hotel-section {
+      background: linear-gradient(135deg, #34495e, #2c3e50);
+      padding: 60px 20px; color: white;
+    }
+    .hotel-rec-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 18px; margin-top: 24px; max-width: 1100px; margin-left: auto; margin-right: auto;
+    }
+    .hotel-rec-card {
+      background: white; color: var(--text-main);
+      border-radius: 14px; padding: 20px;
+      border: 2px solid transparent; transition: all .25s; position: relative;
+    }
+    .hotel-rec-card:hover { border-color: var(--accent); box-shadow: 0 8px 24px rgba(0,0,0,.20); transform: translateY(-3px); }
+    .hotel-rec-card.recommended { border-color: var(--gold); background: linear-gradient(135deg,#fffdf0,#fff); }
+    .hotel-rec-badge {
+      position: absolute; top: -10px; right: 16px;
+      background: var(--gold); color: white;
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 1px;
+      padding: 4px 12px; border-radius: 20px;
+    }
+    .hotel-rec-name { font-size: 1.05rem; font-weight: 700; color: var(--secondary); margin-bottom: 4px; }
+    .hotel-rec-name-jp { font-size: 0.78rem; color: var(--text-sub); margin-bottom: 12px; }
+    .hotel-rec-row { display: flex; align-items: center; gap: 6px; font-size: 0.85rem; margin-bottom: 6px; }
+    .hotel-rec-row .label { color: var(--text-sub); min-width: 60px; }
+    .hotel-rec-price { font-size: 1.05rem; font-weight: 700; color: var(--primary); }
+    .hotel-rec-price small { font-size: 0.72rem; color: var(--text-sub); font-weight: 400; }
+    .hotel-rec-tags { display: flex; flex-wrap: wrap; gap: 5px; margin: 10px 0; }
+    .hotel-rec-tag { background: #f0f4ff; color: #3d5a80; font-size: 0.72rem; padding: 3px 9px; border-radius: 20px; }
+    .hotel-rec-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .hotel-rec-link {
+      display: inline-flex; align-items: center; gap: 4px;
+      background: var(--secondary); color: white;
+      font-size: 0.75rem; padding: 5px 12px; border-radius: 8px; text-decoration: none;
+      transition: background .2s;
+    }
+    .hotel-rec-link:hover { background: var(--primary); }
+    .hotel-rec-link.booking { background: #003580; }
+    .hotel-rec-link.agoda   { background: #5392f9; }
+    .hotel-rec-link.rakuten { background: #BF0000; }
+    .hotel-rec-link.official { background: #16a085; }
+
+    /* ===== LUGGAGE FLOW ===== */
+    .luggage-section { background: linear-gradient(135deg, #16a085, #1abc9c); padding: 60px 20px; color: white; }
+    .luggage-flow {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
+      max-width: 1000px; margin: 30px auto 0;
+    }
+    @media (max-width: 700px) { .luggage-flow { grid-template-columns: 1fr; } }
+    .luggage-step {
+      background: rgba(255,255,255,0.12); backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 14px; padding: 18px;
+    }
+    .luggage-step .step-day { font-size: 0.78rem; letter-spacing: 2px; opacity: 0.85; }
+    .luggage-step .step-title { font-size: 1.1rem; font-weight: 700; margin: 6px 0 10px; }
+    .luggage-step .step-list { font-size: 0.86rem; line-height: 1.8; opacity: 0.95; }
+
+    /* ===== SUMMARY TABLE ===== */
+    .summary-section { padding: 60px 20px; background: var(--bg-card); border-top: 1px solid var(--border); }
+    .summary-table {
+      max-width: 1100px; margin: 0 auto;
+      background: white; border-radius: 14px; padding: 8px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08); overflow-x: auto;
+    }
+    .summary-table table { width: 100%; border-collapse: collapse; font-size: 0.88rem; min-width: 700px; }
+    .summary-table th, .summary-table td { padding: 12px 14px; text-align: left; border-bottom: 1px solid #f0f0f0; }
+    .summary-table th { background: var(--secondary); color: white; font-weight: 600; letter-spacing: 1px; }
+    .summary-table tr:hover { background: #fafafa; }
+    .summary-table .day-cell { font-weight: 700; color: var(--primary); white-space: nowrap; }
+    .summary-table .area-cell { color: var(--text-sub); white-space: nowrap; }
+
+    /* ===== CHECKLIST ===== */
+    .checklist-section { background: #fff5e6; padding: 60px 20px; }
+    .checklist-wrapper { max-width: 900px; margin: 0 auto; }
+    .checklist-card {
+      background: white; border-radius: 14px; padding: 20px 24px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08); margin-bottom: 14px;
+      border-left: 4px solid var(--accent);
+    }
+    .checklist-card h4 { color: var(--secondary); font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
+    .checklist-card p { font-size: 0.88rem; color: #555; line-height: 1.7; }
+    .checklist-card.urgent { border-left-color: var(--primary); background: #fff5f5; }
+    .checklist-card.urgent h4 { color: var(--primary); }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--secondary); color: rgba(255,255,255,0.65);
+      text-align: center; padding: 40px 20px; font-size: 0.85rem; line-height: 1.8;
+    }
+    footer .footer-emoji { font-size: 2rem; margin-bottom: 12px; }
+    footer strong { color: white; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .attraction-grid { grid-template-columns: 1fr; }
+      .day-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-particles">
+    <div class="particle" style="width:200px;height:200px;background:radial-gradient(circle,rgba(192,57,43,0.3),transparent);top:-80px;left:-60px;animation-duration:10s;"></div>
+    <div class="particle" style="width:300px;height:300px;background:radial-gradient(circle,rgba(83,52,131,0.25),transparent);bottom:-100px;right:-80px;animation-duration:12s;animation-delay:2s;"></div>
+    <div class="particle" style="width:150px;height:150px;background:radial-gradient(circle,rgba(243,156,18,0.2),transparent);top:30%;right:10%;animation-duration:8s;animation-delay:1s;"></div>
+  </div>
+  <div class="hero-badge">✈ Family Travel · Japan 2026</div>
+  <h1 class="hero-title">⛩️ 伊勢志摩 × 名古屋<br><span>家族自由行</span><br>6天5夜</h1>
+  <p class="hero-subtitle">2026 年 7 月 2 日 ～ 7 月 7 日　｜　4 人同行（大人 2 ＋ 中學生 2）</p>
+  <div class="hero-info-grid">
+    <div class="hero-info-card">
+      <div class="icon">🛬</div>
+      <div class="label">抵達</div>
+      <div class="value">7/2 樂桃 MM722<br>06:25 名古屋 NGO</div>
+    </div>
+    <div class="hero-info-card">
+      <div class="icon">🛫</div>
+      <div class="label">返程</div>
+      <div class="value">7/7 樂桃 MM723<br>22:45 名古屋 NGO</div>
+    </div>
+    <div class="hero-info-card">
+      <div class="icon">🏨</div>
+      <div class="label">伊勢住宿 3 晚</div>
+      <div class="value">Castle Inn 伊勢夫婦岩</div>
+    </div>
+    <div class="hero-info-card">
+      <div class="icon">🏨</div>
+      <div class="label">名古屋住宿 2 晚</div>
+      <div class="value">名古屋駅周邊（待訂）</div>
+    </div>
+    <div class="hero-info-card">
+      <div class="icon">🎫</div>
+      <div class="label">主力票券</div>
+      <div class="value">まわりゃんせ ×4</div>
+    </div>
+  </div>
+  <div class="scroll-hint">⬇ 向下滾動查看完整行程</div>
+</section>
+
+<!-- ===== STICKY NAV ===== -->
+<nav class="sticky-nav">
+  <div class="nav-inner">
+    <a class="nav-btn" href="#ticket">🎫 神券</a>
+    <a class="nav-btn" href="#flight">✈ 航班</a>
+    <a class="nav-btn" href="#luggage">🧳 行李策略</a>
+    <a class="nav-btn" href="#day1">Day 1 外宮·シーパラ</a>
+    <a class="nav-btn" href="#day2">Day 2 鳥羽·忍者</a>
+    <a class="nav-btn" href="#day3">Day 3 志摩スペイン村</a>
+    <a class="nav-btn" href="#day4">Day 4 內宮·名古屋</a>
+    <a class="nav-btn" href="#day5">Day 5 吉卜力</a>
+    <a class="nav-btn" href="#day6">Day 6 購物·返程</a>
+    <a class="nav-btn" href="#hotel-nagoya">🏨 名古屋飯店</a>
+    <a class="nav-btn" href="#summary">📋 總覽表</a>
+    <a class="nav-btn" href="#checklist">✅ 行前清單</a>
+  </div>
+</nav>
+
+<!-- ===== TICKET SECTION ===== -->
+<section class="ticket-section" id="ticket">
+  <div class="ticket-inner">
+    <div class="section-title">
+      <h2>🎫 核心交通票券：まわりゃんせ（伊勢志摩旅遊護照）</h2>
+      <p class="sub">4 天無限暢遊伊勢・鳥羽・志摩 ｜ 23 大景點免費入場 ｜ 近鐵特急來回包含</p>
+    </div>
+    <div class="ticket-card">
+      <div class="ticket-left">
+        <div class="ticket-name">伊勢志摩旅遊護照<br>「特急券付」版</div>
+        <div class="ticket-jp">まわりゃんせ・近鐵周遊券</div>
+        <div class="ticket-desc">
+          近鐵電車「近鐵名古屋駅」出發 → 伊勢志摩自由區間（松阪～賢島）來回，
+          4 天有效，正好涵蓋 7/2-7/5 在伊勢期間。
+        </div>
+        <div class="ticket-price-box">
+          <div class="label">大人票價（中學生以上）</div>
+          <div class="price">¥12,100 / 人</div>
+          <div class="note">4 人合計 ¥48,400</div>
+        </div>
+        <div class="ticket-highlight">
+          ⚠ 名古屋中部機場 → 名鐵名古屋駅這段（μ-SKY ¥1,430/人）不在票券範圍，需另外購買。
+        </div>
+      </div>
+      <div class="ticket-right">
+        <div class="ticket-item">
+          <span class="item-icon">🚄</span>
+          <div class="item-text"><strong>近鐵特急來回（名古屋⇄伊勢）</strong>含「ゆき」+「かえり」指定席特急券共 2 張</div>
+        </div>
+        <div class="ticket-item">
+          <span class="item-icon">🎟️</span>
+          <div class="item-text"><strong>自由區間特急自由席券 4 張</strong>松阪～賢島隨時加搭特急</div>
+        </div>
+        <div class="ticket-item">
+          <span class="item-icon">🚌</span>
+          <div class="item-text"><strong>三重交通巴士 4 天無限搭乘</strong>內宮巴士、伊勢市駅↔二見浦巴士全包</div>
+        </div>
+        <div class="ticket-item">
+          <span class="item-icon">⛴️</span>
+          <div class="item-text"><strong>鳥羽市營定期船無限搭乘</strong>鳥羽湾遊覽、海豚島都涵蓋</div>
+        </div>
+        <div class="ticket-item">
+          <span class="item-icon">🐠</span>
+          <div class="item-text"><strong>23 個景點免費入場</strong>含鳥羽水族館、志摩スペイン村、伊勢忍者キングダム、伊勢シーパラダイス、御木本真珠島等（2026 年新增志摩グリーンアドベンチャー）</div>
+        </div>
+        <div class="ticket-item">
+          <span class="item-icon">💼</span>
+          <div class="item-text"><strong>手荷物無料配送服務</strong>每人可免費寄 1 件行李至指定飯店（飯店是否在清單需先確認）</div>
+        </div>
+        <div class="ticket-item">
+          <span class="item-icon">🍡</span>
+          <div class="item-text"><strong>託福橫丁 70+ 商家折扣</strong>赤福、松阪牛串、土產店都有特典</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="savings-table">
+      <h4>💰 划算度試算（每位大人 / 本行程實際使用）</h4>
+      <table>
+        <thead>
+          <tr><th>項目</th><th class="num">不買票券（單買）</th><th class="num">買 まわりゃんせ</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>近鐵特急 名古屋⇄伊勢 來回</td><td class="num">¥6,160</td><td class="num">含</td></tr>
+          <tr><td>🐠 鳥羽水族館門票</td><td class="num">¥2,800</td><td class="num">免費</td></tr>
+          <tr><td>🎢 志摩スペイン村 一日券</td><td class="num">¥5,300</td><td class="num">免費</td></tr>
+          <tr><td>🥷 伊勢忍者キングダム 入場券</td><td class="num">¥4,500</td><td class="num">免費</td></tr>
+          <tr><td>🐬 伊勢シーパラダイス 入場券</td><td class="num">¥1,950</td><td class="num">免費</td></tr>
+          <tr><td>💎 御木本真珠島門票</td><td class="num">¥1,650</td><td class="num">免費</td></tr>
+          <tr><td>🚢 鳥羽湾遊覽船 + 海豚島</td><td class="num">¥2,400</td><td class="num">免費</td></tr>
+          <tr><td>🚌 內宮巴士、區域內巴士</td><td class="num">≈ ¥1,500</td><td class="num">免費</td></tr>
+        </tbody>
+        <tfoot>
+          <tr><td><strong>大人合計</strong></td><td class="num"><strong>≈ ¥26,260</strong></td><td class="num"><strong>¥12,100</strong></td></tr>
+          <tr><td><strong>4 人合計（單買 vs 票券）</strong></td><td class="num"><strong>¥105,040</strong></td><td class="num"><strong>¥48,400</strong></td></tr>
+          <tr><td><strong>4 人省下</strong></td><td class="num" colspan="2" style="color:var(--primary);font-weight:900;">≈ ¥56,640（約 NT$11,600）</td></tr>
+        </tfoot>
+      </table>
+      <p style="font-size:0.85rem;color:var(--text-sub);margin-top:12px;">
+        ※ 本表已將「景點全部走完」的最大 CP 值情境列出。實際省下金額視當天體力與興趣調整，但即便僅完成 60–70% 行程，仍遠勝單買。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FLIGHT INFO ===== -->
+<section class="flight-section" id="flight">
+  <div class="section-title">
+    <h2 style="color:white;">✈ 航班資訊（樂桃航空）</h2>
+    <p class="sub">桃園 ⇄ 名古屋中部國際機場 NGO</p>
+  </div>
+  <div class="flight-grid">
+    <div class="flight-card">
+      <div class="flight-type">Outbound · 出發</div>
+      <div class="flight-route">
+        <div class="flight-city">TPE</div>
+        <span class="flight-arrow">✈</span>
+        <div class="flight-city">NGO</div>
+      </div>
+      <div class="flight-times">
+        <div class="flight-time-info">
+          <div class="time">02:45 → 06:25</div>
+          <div class="date">2026/7/2（週四）紅眼班機</div>
+        </div>
+        <div class="flight-number">MM 722</div>
+      </div>
+    </div>
+    <div class="flight-card">
+      <div class="flight-type">Return · 返程</div>
+      <div class="flight-route">
+        <div class="flight-city">NGO</div>
+        <span class="flight-arrow">✈</span>
+        <div class="flight-city">TPE</div>
+      </div>
+      <div class="flight-times">
+        <div class="flight-time-info">
+          <div class="time">22:45 → 01:25+1</div>
+          <div class="date">2026/7/7（週二）→ 7/8 凌晨抵桃園</div>
+        </div>
+        <div class="flight-number">MM 723</div>
+      </div>
+    </div>
+  </div>
+  <div style="max-width:900px;margin:24px auto 0;">
+    <div class="tip-box info">
+      <div class="tip-title">💡 機場 ⇄ 名古屋駅交通</div>
+      搭名鐵 <strong>μ-SKY 特急</strong>，名古屋駅 ⇄ 中部機場僅需 28 分鐘，¥1,430（含 μticket 特別車費）。
+      抵達當天先到近鐵名古屋駅領 まわりゃんせ + 引換特急券，再轉近鐵特急到伊勢市駅。
+    </div>
+  </div>
+</section>
+
+<!-- ===== LUGGAGE STRATEGY ===== -->
+<section class="luggage-section" id="luggage">
+  <div class="section-title">
+    <h2 style="color:white;">🧳 行李動線策略</h2>
+    <p class="sub">抵達日寄存 + 飯店免費接駁　｜　離開日寄存於伊勢市駅　｜　全程不拖行李轉車</p>
+  </div>
+  <div class="luggage-flow">
+    <div class="luggage-step">
+      <div class="step-day">DAY 1 · 7/2 抵達</div>
+      <div class="step-title">伊勢市駅寄存</div>
+      <div class="step-list">
+        ① 抵達伊勢市駅後將 4 件大行李寄存於「手荷物預かり所」<br>
+        ② 輕裝走外宮 + 伊勢市駅周邊午餐<br>
+        ③ 下午回駅取行李，搭<strong>飯店免費接駁巴士</strong>到飯店（伊勢市駅 JR 側出口發車）<br>
+        💰 ¥500 × 4 件 ＝ ¥2,000
+      </div>
+    </div>
+    <div class="luggage-step">
+      <div class="step-day">DAY 2-3 · 7/3-7/4 中段</div>
+      <div class="step-title">行李在飯店</div>
+      <div class="step-list">
+        ① 行李留飯店，輕裝出發<br>
+        ② Day 2：夫婦岩日出 + 鳥羽水族館 + 真珠島 + 忍者キングダム<br>
+        ③ Day 3：志摩スペイン村 一日遊<br>
+        ✨ 完全不需拖行李移動
+      </div>
+    </div>
+    <div class="luggage-step">
+      <div class="step-day">DAY 4 · 7/5 離開</div>
+      <div class="step-title">退房 → 寄存 → 玩 → 搭近鐵</div>
+      <div class="step-list">
+        ① 退房後搭飯店接駁到伊勢市駅<br>
+        ② 行李寄存於手荷物預かり所<br>
+        ③ 內宮 + 託福橫丁<br>
+        ④ 取行李 → 搭近鐵特急直接到名古屋飯店<br>
+        💰 ¥500 × 4 件 ＝ ¥2,000
+      </div>
+    </div>
+  </div>
+  <div style="max-width:900px;margin:30px auto 0;">
+    <div class="tip-box info">
+      <div class="tip-title">📞 行前必做：用 Email 聯絡 Castle Inn 伊勢夫婦岩確認 3 件事</div>
+      ① 伊勢市駅 → 飯店免費接駁巴士 7/2 下午班次需事前預約嗎？<br>
+      ② 退房後（7/5）能否協助寄送行李回台灣／代為保管？<br>
+      ③ 是否為「近鐵まわりゃんせ手荷物無料配送」指定宿泊施設？
+    </div>
+    <div class="tip-box warn">
+      <div class="tip-title">⚠ 為何不選「行李宅配」？</div>
+      Castle Inn 不是近鐵集團或三交集團的飯店，可能不在 まわりゃんせ 免費配送的指定清單內。<br>
+      若改用付費配送 ¥1,150 × 4 件 ＝ ¥4,600，比 <strong>「寄存 + 飯店免費接駁」¥2,000</strong> 貴一倍以上，
+      且須依賴外部變數，因此選定後者更穩。
+    </div>
+  </div>
+</section>
+
+<!-- ===== MAIN CONTENT ===== -->
+<div class="main-content">
+
+<!-- ===== DAY 1 ===== -->
+<section class="day-section" id="day1">
+  <div class="day-header day1">
+    <div class="day-number">
+      <span class="day-text">DAY</span>
+      <span class="day-num">1</span>
+    </div>
+    <div class="day-info">
+      <h2>🌅 抵達日：外宮參拜 ✕ 伊勢市散步 ✕ 飯店泡湯</h2>
+      <div class="day-meta">
+        <span>📅 2026/7/2（週四）</span>
+        <span>📍 中部機場 → 名古屋 → 伊勢市 → 二見</span>
+        <span>🎫 起用 まわりゃんせ</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hotel-banner">
+    <div class="hotel-icon">🏨</div>
+    <div class="hotel-info">
+      <h4>Hotel Castle Inn 伊勢夫婦岩 ｜ 已預訂 7/2-7/5（3 晚）</h4>
+      <p>位於二見町，距夫婦岩步行 10 分；最近車站 JR 二見浦駅；提供免費私人溫泉、伊勢市駅 ⇄ 飯店免費接駁巴士、海景房可看日出。</p>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-time">02:45</div>
+      <div class="timeline-content">桃園機場搭乘 <strong>樂桃 MM722</strong> 起飛（紅眼班機）</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">06:25</div>
+      <div class="timeline-content">抵達 <strong>名古屋中部國際機場（NGO）</strong>，入境＋領 4 件行李</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">07:30</div>
+      <div class="timeline-content">名鐵 <strong>μ-SKY 特急</strong> → 名鐵名古屋駅（28 分鐘，¥1,430/人）</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">08:10</div>
+      <div class="timeline-content">走到 <strong>近鐵名古屋駅</strong>「特急券うりば」窗口，引換 4 張 まわりゃんせ + 4 張「ゆき」特急券，並預訂 7/5 回程「かえり」特急券<span class="ticket-tag">🎫 票券</span></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">08:30</div>
+      <div class="timeline-content">搭 <strong>近鐵特急</strong> 名古屋 → 伊勢市駅（約 1 小時 23 分）<span class="free-tag">✓ 票券含</span></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">10:00</div>
+      <div class="timeline-content">抵達 <strong>伊勢市駅</strong>，將 4 件行李寄存於駅前「手荷物預かり所」（¥500/件）</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">11:00–12:00</div>
+      <div class="timeline-content">輕裝走訪 <strong>外宮（豐受大神宮）</strong>，從伊勢市駅徒步 5 分鐘可到，依日本傳統「先外宮後內宮」</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">12:00–13:30</div>
+      <div class="timeline-content">外宮參道午餐：伊勢烏龍麵、手捏壽司</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">14:00–15:00</div>
+      <div class="timeline-content">外宮周邊散步：勾玉池、せんぐう館（外宮歷史博物館）</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">15:00</div>
+      <div class="timeline-content">回伊勢市駅取行李，搭 <strong>飯店免費接駁巴士</strong>（JR 側出口發車）到飯店</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">15:45</div>
+      <div class="timeline-content">飯店 <strong>check-in</strong>，紅眼疲勞快速補眠 30 分</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">16:30–18:00</div>
+      <div class="timeline-content">🐬 <strong>伊勢シーパラダイス（伊勢夫婦岩めおと横丁）</strong>（飯店步行約 5 分鐘，可摸海象、餵海豹、餵企鵝，互動式小水族館）<span class="ticket-tag">🎫 免費入場 原價 ¥1,950</span></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">18:00–19:00</div>
+      <div class="timeline-content">散步到 <strong>夫婦岩</strong>看夕陽（シーパラダイス旁，徒步 3 分鐘）</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">19:30</div>
+      <div class="timeline-content">飯店 <strong>免費私人溫泉</strong> + 晚餐</div>
+    </div>
+  </div>
+
+  <div class="attraction-grid">
+    <div class="attraction-card">
+      <div class="card-img-wrap">
+        <img src="https://www.isejingu.or.jp/common/images/about/index/img-precincts-geku.jpg" alt="外宮" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Geku_Ise_Grand_Shrine.jpg/800px-Geku_Ise_Grand_Shrine.jpg'">
+        <div class="card-time-badge">11:00 · 1H</div>
+        <div class="card-img-overlay">
+          <span class="card-category shrine">伊勢神宮</span>
+          <div class="card-title-on-img">外宮 · 豐受大神宮</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">外宮（豐受大神宮）</div>
+        <div class="card-name-jp">げくう・とようけだいじんぐう</div>
+        <div class="card-desc">伊勢神宮先參拜的第一站，奉祀掌管衣食住農業的「豐受大御神」。境內有勾玉池、せんぐう館，從伊勢市駅徒步僅 5 分鐘。</div>
+        <div class="card-tags">
+          <span class="card-tag free">免費入場</span>
+          <span class="card-tag">必訪聖地</span>
+          <span class="card-tag">徒步 5 分</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="attraction-card">
+      <div class="card-img-wrap">
+        <img src="https://ise-seaparadise.com/wp-content/uploads/2021/04/main_visual_pc.jpg" alt="伊勢シーパラダイス" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Ise_Sea_Paradise.jpg/800px-Ise_Sea_Paradise.jpg'">
+        <div class="card-time-badge">16:30 · 1.5H</div>
+        <div class="card-img-overlay">
+          <span class="card-category">親子・水族館</span>
+          <div class="card-title-on-img">伊勢シーパラダイス</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">伊勢シーパラダイス</div>
+        <div class="card-name-jp">いせシーパラダイス</div>
+        <div class="card-desc">日本最近距離可接觸海象、海獅、海豹的迷你水族館。可餵食企鵝、與海象握手拍照，距夫婦岩、Castle Inn 都步行可達，順遊毫無壓力。</div>
+        <div class="card-tags">
+          <span class="card-tag free">票券免費</span>
+          <span class="card-tag">原價 ¥1,950</span>
+          <span class="card-tag must">最近距離互動</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="attraction-card">
+      <div class="card-img-wrap">
+        <img src="https://www.kankomie.or.jp/files/spot/40/futamiokitamajinja.jpg" alt="夫婦岩" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Meoto_Iwa_Futami_Mie_pref_Japan02s3.jpg/800px-Meoto_Iwa_Futami_Mie_pref_Japan02s3.jpg'">
+        <div class="card-time-badge">18:00 · 夕陽</div>
+        <div class="card-img-overlay">
+          <span class="card-category nature">自然・神社</span>
+          <div class="card-title-on-img">夫婦岩 · 二見興玉神社</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">夫婦岩</div>
+        <div class="card-name-jp">めおといわ</div>
+        <div class="card-desc">伊勢著名的夫妻岩，由粗繩相連，象徵夫妻和合。緊鄰 シーパラダイス，傍晚夕陽下的剪影非常迷人，明日早晨再來看日出。</div>
+        <div class="card-tags">
+          <span class="card-tag free">免費</span>
+          <span class="card-tag must">明日日出</span>
+          <span class="card-tag">距飯店 10 分</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tip-box">
+    <div class="tip-title">💡 抵達日小提醒</div>
+    紅眼班機真的累，Day 1 安排刻意輕鬆。<strong>絕對不要拖著 4 件行李去外宮</strong>，先寄存伊勢市駅再去玩，傍晚再取行李搭飯店接駁。飯店接駁建議入住前 1-2 天用 email 預約班次。<br>
+    👉 順遊 シーパラダイス + 夫婦岩 兩景點都在飯店步行範圍，<strong>4 人省下 ¥7,800 入場費</strong>，又能消化抵達日剩餘體力。
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ===== DAY 2 ===== -->
+<section class="day-section" id="day2">
+  <div class="day-header day2">
+    <div class="day-number">
+      <span class="day-text">DAY</span>
+      <span class="day-num">2</span>
+    </div>
+    <div class="day-info">
+      <h2>🌅 夫婦岩日出 ✕ 鳥羽水族館 ✕ 御木本真珠島</h2>
+      <div class="day-meta">
+        <span>📅 2026/7/3（週五）</span>
+        <span>📍 二見 → 鳥羽</span>
+        <span>🎫 まわりゃんせ 全程適用</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="tip-box warn">
+    <div class="tip-title">🌅 重頭戲：夫婦岩日出</div>
+    每年 5～7 月朝陽會從夫婦岩之間升起，夏至前後天氣晴朗時甚至能看到富士山從太陽背後浮現。
+    <strong>7 月初仍在黃金期內</strong>，請出發前再次確認當日日出時間（約 04:45）與天氣。
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-time">04:30</div>
+      <div class="timeline-content">起床步行 10 分鐘到 <strong>二見興玉神社</strong></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">04:45</div>
+      <div class="timeline-content">🌅 <strong>夫婦岩日出</strong>（7 月黃金期，朝陽從岩石間升起）</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">06:00</div>
+      <div class="timeline-content">回飯店享用早餐（飯店頂樓餐廳可看海景）</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">08:30</div>
+      <div class="timeline-content">飯店出發到鳥羽駅（搭近鐵或巴士）<span class="free-tag">✓ 票券含</span></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">09:00–12:30</div>
+      <div class="timeline-content">🐠 <strong>鳥羽水族館</strong>（日本飼育種類最多，必看儒艮、海獺）<span class="ticket-tag">🎫 免費入場 原價 ¥2,800</span></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">12:30–13:30</div>
+      <div class="timeline-content">鳥羽駅周邊午餐（海鮮丼、牡蠣料理）</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">13:30–15:30</div>
+      <div class="timeline-content">💎 <strong>御木本真珠島</strong>（海女實演每天 5-6 場，可看穿白衣海女自由潛水採珠）<span class="ticket-tag">🎫 免費入場 原價 ¥1,650</span></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">15:30–16:30</div>
+      <div class="timeline-content">🚢 加碼：<strong>鳥羽湾めぐり與海豚島遊覽船</strong>（縮短至 1 小時，僅搭船航行不下海豚島）<span class="ticket-tag">🎫 免費 原價 ¥2,400</span></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">16:45</div>
+      <div class="timeline-content">搭近鐵特急或巴士回 <strong>五十鈴川駅</strong><span class="free-tag">✓ 票券含</span></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">17:00–19:00</div>
+      <div class="timeline-content">🥷 <strong>伊勢忍者キングダム（戰國時代村）</strong>：忍者表演秀、手裏劍道場、忍者迷宮、化裝體驗，青少年最愛<span class="ticket-tag">🎫 免費入場 原價 ¥4,500</span></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">19:30</div>
+      <div class="timeline-content">搭巴士回飯店<span class="free-tag">✓ 票券含</span>，飯店泡湯 + 晚餐</div>
+    </div>
+  </div>
+
+  <div class="attraction-grid">
+    <div class="attraction-card">
+      <div class="card-img-wrap">
+        <img src="https://www.aquarium.co.jp/img/site/og.jpg" alt="鳥羽水族館" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Toba_Aquarium20120501.jpg/800px-Toba_Aquarium20120501.jpg'">
+        <div class="card-time-badge">3.5H</div>
+        <div class="card-img-overlay">
+          <span class="card-category">親子・水族館</span>
+          <div class="card-title-on-img">鳥羽水族館</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">鳥羽水族館</div>
+        <div class="card-name-jp">とばすいぞくかん</div>
+        <div class="card-desc">日本飼育種類最多的水族館，1,200 種以上海洋生物。<strong>儒艮</strong>是全日本唯一展示，還有海獺、海獅秀、海象表演。</div>
+        <div class="card-tags">
+          <span class="card-tag must">青少年最愛</span>
+          <span class="card-tag free">票券免費</span>
+          <span class="card-tag">原價 ¥2,800</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="attraction-card">
+      <div class="card-img-wrap">
+        <img src="https://www.mikimoto-pearl-island.jp/cms/wp-content/themes/mikimoto-pearl-island/assets/img/og.jpg" alt="御木本真珠島" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Mikimoto_Pearl_Island_in_Toba.JPG/800px-Mikimoto_Pearl_Island_in_Toba.JPG'">
+        <div class="card-time-badge">2H</div>
+        <div class="card-img-overlay">
+          <span class="card-category">文化・體驗</span>
+          <div class="card-title-on-img">御木本真珠島</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">御木本真珠島</div>
+        <div class="card-name-jp">ミキモト真珠島</div>
+        <div class="card-desc">珍珠養殖發源地，全球第一顆養殖珍珠的誕生地。每天 5-6 場海女實演，可看穿白衣的海女自由潛水採珠。</div>
+        <div class="card-tags">
+          <span class="card-tag free">票券免費</span>
+          <span class="card-tag">原價 ¥1,650</span>
+          <span class="card-tag">海女實演</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="attraction-card">
+      <div class="card-img-wrap">
+        <img src="https://shima-marineleisure.com/wp-content/uploads/2020/06/img_top_main.jpg" alt="鳥羽湾遊覽船" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Toba_Bay_cruise.jpg/800px-Toba_Bay_cruise.jpg'">
+        <div class="card-time-badge">1H</div>
+        <div class="card-img-overlay">
+          <span class="card-category nature">海上遊覽</span>
+          <div class="card-title-on-img">鳥羽湾めぐり・海豚島</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">鳥羽湾めぐり與海豚島</div>
+        <div class="card-name-jp">とばわんめぐり・イルカ島</div>
+        <div class="card-desc">遊覽船航行於鳥羽美麗的多島海，本日因下午改去忍者キングダム，僅搭船航行不下島。完全免費加碼。</div>
+        <div class="card-tags">
+          <span class="card-tag free">票券免費</span>
+          <span class="card-tag">原價 ¥2,400</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="attraction-card">
+      <div class="card-img-wrap">
+        <img src="https://www.ise-jokamachi.jp/images/main_visual.jpg" alt="伊勢忍者キングダム" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Ise_Azuchi_Momoyama_Bunkamura.jpg/800px-Ise_Azuchi_Momoyama_Bunkamura.jpg'">
+        <div class="card-time-badge">17:00 · 2H</div>
+        <div class="card-img-overlay">
+          <span class="card-category">主題園・體驗</span>
+          <div class="card-title-on-img">伊勢忍者キングダム</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">伊勢忍者キングダム（戰國時代村）</div>
+        <div class="card-name-jp">いせ忍者キングダム</div>
+        <div class="card-desc">重現安土桃山時代街景的主題園區，忍者實演、手裏劍體驗、忍者迷宮、立體迷路、變裝拍照 — 中學生最愛的場域。距 Castle Inn 步行約 15 分鐘。</div>
+        <div class="card-tags">
+          <span class="card-tag free">票券免費</span>
+          <span class="card-tag">原價 ¥4,500</span>
+          <span class="card-tag must">青少年最愛</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tip-box info">
+    <div class="tip-title">💡 票券精算</div>
+    Day 2 一天用掉 <strong>¥11,350/人</strong>（鳥羽水族館 ¥2,800 + 真珠島 ¥1,650 + 遊覽船 ¥2,400 + 忍者キングダム ¥4,500）的免費入場，4 人共省 <strong>¥45,400</strong>，還沒算近鐵車資。<br>
+    <strong>水族館 + 真珠島步行可達</strong>（約 5 分鐘），不需轉車；下午從鳥羽搭近鐵特急 9 分鐘到五十鈴川駅，再轉巴士可達忍者キングダム，動線順暢。
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ===== DAY 3 ===== -->
+<section class="day-section" id="day3">
+  <div class="day-header day3">
+    <div class="day-number">
+      <span class="day-text">DAY</span>
+      <span class="day-num">3</span>
+    </div>
+    <div class="day-info">
+      <h2>🎢 志摩スペイン村 Parque España：一日西班牙主題樂園</h2>
+      <div class="day-meta">
+        <span>📅 2026/7/4（週六）</span>
+        <span>📍 二見 → 鵜方 → 志摩スペイン村</span>
+        <span>🎫 まわりゃんせ 一日券免費</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="tip-box info">
+    <div class="tip-title">🗺️ 為什麼選 志摩スペイン村？</div>
+    您指示「中間日安排比較遠的地方」，志摩半島最遠端（鵜方）正好搭配 まわりゃんせ 自由區間。<strong>2024 年起 志摩スペイン村 已正式列入 まわりゃんせ 23 對象施設之一</strong>，一日券原價 ¥5,300/大人，4 人合計可省 ¥21,200，是 23 個免費景點中最高 CP 值的單項。樂園內有 30 多項遊樂設施，<strong>對中學生而言比展望台和遊覽船有趣得多</strong>。行李留在飯店輕裝出發，最舒服。
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-time">08:00</div>
+      <div class="timeline-content">飯店早餐</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">08:45</div>
+      <div class="timeline-content">飯店接駁巴士到 <strong>二見浦駅</strong>，搭近鐵到鳥羽駅<span class="free-tag">✓ 票券含</span></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">09:15</div>
+      <div class="timeline-content">鳥羽駅換搭近鐵特急 → <strong>鵜方駅</strong>（約 30 分鐘）<span class="free-tag">✓ 票券含 自由區間</span></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">10:00</div>
+      <div class="timeline-content">鵜方駅 4 號乘車處搭 <strong>三重交通直通巴士</strong> → 志摩スペイン村（約 13 分）<span class="free-tag">✓ 票券含</span></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">10:15–13:00</div>
+      <div class="timeline-content">🎢 <strong>Parque España 上午場</strong>：必玩 ピレネー（雲霄飛車）、グランモンセラー、鬥牛士コースター、鐵腕アトム咖啡杯、城堡探險<span class="ticket-tag">🎫 一日券免費 原價 ¥5,300</span></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">13:00–14:00</div>
+      <div class="timeline-content">園內西班牙風餐廳午餐：海鮮飯 paella、tapas、churros 巧克力</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">14:00–17:30</div>
+      <div class="timeline-content">🎭 <strong>Parque España 下午場</strong>：佛朗明哥舞表演、卡通人物迎賓秀、Castle of Xavier 鬼屋、3D 劇場、紀念品店</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">17:30</div>
+      <div class="timeline-content">園區直通巴士回鵜方駅<span class="free-tag">✓ 票券含</span></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">18:00</div>
+      <div class="timeline-content">鵜方駅近鐵特急回 → 鳥羽 → 巴士回飯店<span class="free-tag">✓ 票券含</span></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">19:30</div>
+      <div class="timeline-content">飯店泡湯 + 晚餐（最後一晚伊勢享受）</div>
+    </div>
+  </div>
+
+  <div class="attraction-grid">
+    <div class="attraction-card">
+      <div class="card-img-wrap">
+        <img src="https://www.parque-net.com/asset/img/ogp.jpg" alt="志摩スペイン村" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Shima_Spain_Village_Parque_Espana.jpg/800px-Shima_Spain_Village_Parque_Espana.jpg'">
+        <div class="card-time-badge">一日</div>
+        <div class="card-img-overlay">
+          <span class="card-category">主題樂園</span>
+          <div class="card-title-on-img">志摩スペイン村 Parque España</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">志摩スペイン村 帕魯凱埃斯帕尼亞</div>
+        <div class="card-name-jp">志摩スペイン村 パルケエスパーニャ</div>
+        <div class="card-desc">重現西班牙街景的大型主題樂園，30+ 遊樂設施。招牌雲霄飛車「ピレネー」是日本知名速度型機種，加上佛朗明哥秀、castle 探險、西班牙料理，可玩一整天。</div>
+        <div class="card-tags">
+          <span class="card-tag free">票券免費</span>
+          <span class="card-tag">原價 ¥5,300/人</span>
+          <span class="card-tag must">本行最強 CP</span>
+          <span class="card-tag">青少年最愛</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="attraction-card">
+      <div class="card-img-wrap">
+        <img src="https://www.parque-net.com/asset/img/attraction/pyrenees/main.jpg" alt="ピレネー雲霄飛車" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Pyrenees_roller_coaster.jpg/800px-Pyrenees_roller_coaster.jpg'">
+        <div class="card-time-badge">招牌設施</div>
+        <div class="card-img-overlay">
+          <span class="card-category">遊樂設施</span>
+          <div class="card-title-on-img">ピレネー Pyrenees</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">ピレネー（庇里牛斯）懸吊式雲霄飛車</div>
+        <div class="card-name-jp">ピレネー</div>
+        <div class="card-desc">日本國內知名的懸吊式 inverted coaster，最高時速 100 km/h，最大落差 45 公尺，6 個翻轉。中學生身高 130 cm 以上即可搭乘。</div>
+        <div class="card-tags">
+          <span class="card-tag must">必玩</span>
+          <span class="card-tag">日本前 5 強</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="attraction-card">
+      <div class="card-img-wrap">
+        <img src="https://www.parque-net.com/asset/img/show/flamenco/main.jpg" alt="佛朗明哥秀" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Flamenco_dance_performance.jpg/800px-Flamenco_dance_performance.jpg'">
+        <div class="card-time-badge">每日 4 場</div>
+        <div class="card-img-overlay">
+          <span class="card-category">表演</span>
+          <div class="card-title-on-img">Carmen 佛朗明哥秀</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Flamenco Show「Carmen」</div>
+        <div class="card-name-jp">フラメンコショー</div>
+        <div class="card-desc">園內劇場的招牌表演，西班牙派遣專業舞者演出，30 分鐘節目，每日 4 場。建議於入園後先到劇場確認當日時刻表。</div>
+        <div class="card-tags">
+          <span class="card-tag free">入園即可看</span>
+          <span class="card-tag">30 分鐘</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tip-box">
+    <div class="tip-title">💡 樂園攻略</div>
+    ① <strong>到園優先衝 ピレネー</strong>（招牌雲霄飛車排隊最久），中午前先 3 大設施完成。<br>
+    ② <strong>日本職人版的 Parque España</strong>：園內所有員工真的會西班牙語問候，建材也是西班牙進口；近年因網紅推薦，國內遊客明顯回流。<br>
+    ③ <strong>夏季 7 月有水戰活動 Splash Festa</strong>：可帶換洗衣物或在園內購買雨衣（園區內排泄物收集很乾淨）。<br>
+    ④ <strong>不要錯過 Castle of Xavier</strong>（鬼屋形式的 walk-through），中學生會喜歡。
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ===== DAY 4 ===== -->
+<section class="day-section" id="day4">
+  <div class="day-header day4">
+    <div class="day-number">
+      <span class="day-text">DAY</span>
+      <span class="day-num">4</span>
+    </div>
+    <div class="day-info">
+      <h2>⛩️ 內宮 ✕ 託福橫丁 ✕ 移動名古屋</h2>
+      <div class="day-meta">
+        <span>📅 2026/7/5（週日）</span>
+        <span>📍 二見 → 伊勢市 → 名古屋</span>
+        <span>🎫 まわりゃんせ 最後一天</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hotel-banner" style="background:linear-gradient(135deg,#16a085,#1abc9c);">
+    <div class="hotel-icon">🚆</div>
+    <div class="hotel-info">
+      <h4>關鍵：行李動線最佳化</h4>
+      <p>退房後 → 飯店接駁到伊勢市駅 → 行李寄存 → 內宮+託福橫丁輕裝玩 → 取行李 → 近鐵特急直接到名古屋飯店。<strong>不需折返飯店</strong>。</p>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-time">08:00</div>
+      <div class="timeline-content">飯店早餐</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">09:00</div>
+      <div class="timeline-content">飯店退房，搭飯店接駁巴士到 <strong>伊勢市駅</strong></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">09:30</div>
+      <div class="timeline-content">伊勢市駅「手荷物預かり所」寄存 4 件行李（¥500/件）</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">10:00</div>
+      <div class="timeline-content">搭巴士到 <strong>內宮</strong>（伊勢市駅 ⇄ 內宮）<span class="free-tag">✓ 票券含 原價 ¥470/趟</span></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">10:30–13:00</div>
+      <div class="timeline-content">⛩️ <strong>伊勢神宮內宮（皇大神宮）</strong>，神道教最神聖的地方。在五十鈴川洗手淨身、走過宇治橋、參拜正宮</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">13:00–15:30</div>
+      <div class="timeline-content">🍡 <strong>託福橫丁</strong>（おかげ横丁）：必吃赤福本店、伊勢烏龍麵、松阪牛串、豆腐料理「とうふや」<span class="ticket-tag">🎫 70+ 商家有特典折扣</span></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">15:30</div>
+      <div class="timeline-content">搭巴士回伊勢市駅<span class="free-tag">✓ 票券含</span></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">16:00</div>
+      <div class="timeline-content">取行李，到近鐵窗口確認 7/5「かえり」特急券</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">16:30</div>
+      <div class="timeline-content">搭 <strong>近鐵特急</strong> 伊勢市 → 近鐵名古屋（約 1 小時 23 分）<span class="ticket-tag">🎫「かえり」特急券</span></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">18:00</div>
+      <div class="timeline-content">抵達近鐵名古屋駅，<strong>まわりゃんせ 在此回收結束</strong></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">18:15</div>
+      <div class="timeline-content">走到飯店 check-in（步行 5 分鐘內）</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">19:30</div>
+      <div class="timeline-content">晚餐：JR Gate Tower 12-13F 餐廳街（味噌豬排、ひつまぶし鰻魚飯三吃）or Esca 地下街名古屋台灣拉麵</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">21:00</div>
+      <div class="timeline-content">JR Central Towers <strong>Sky Promenade</strong>（46F 戶外觀景台，免費）看夜景</div>
+    </div>
+  </div>
+
+  <div class="attraction-grid">
+    <div class="attraction-card">
+      <div class="card-img-wrap">
+        <img src="https://www.isejingu.or.jp/common/images/about/index/img-precincts-naiku.jpg" alt="內宮" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Naiku_03.jpg/800px-Naiku_03.jpg'">
+        <div class="card-time-badge">2.5H</div>
+        <div class="card-img-overlay">
+          <span class="card-category shrine">伊勢神宮</span>
+          <div class="card-title-on-img">內宮 · 皇大神宮</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">內宮（皇大神宮）</div>
+        <div class="card-name-jp">ないくう・こうたいじんぐう</div>
+        <div class="card-desc">奉祀皇室祖先「天照大御神」，神道教最神聖之地。境內清澈的五十鈴川可洗手淨身，宇治橋象徵聖俗分界。</div>
+        <div class="card-tags">
+          <span class="card-tag free">免費入場</span>
+          <span class="card-tag must">必訪聖地</span>
+          <span class="card-tag">2,000 年歷史</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="attraction-card">
+      <div class="card-img-wrap">
+        <img src="https://www.okageyokocho.com/main/wp-content/themes/okageyokocho/img/top/main_visual.jpg" alt="託福橫丁" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Okage_Yokocho_Ise.jpg/800px-Okage_Yokocho_Ise.jpg'">
+        <div class="card-time-badge">2.5H</div>
+        <div class="card-img-overlay">
+          <span class="card-category food">美食・購物</span>
+          <div class="card-title-on-img">託福橫丁</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">託福橫丁</div>
+        <div class="card-name-jp">おかげ横丁</div>
+        <div class="card-desc">內宮前 60 餘間江戶風情商家，必吃赤福（招牌紅豆麻糬）、松阪牛串、伊勢烏龍麵、豆腐料理「とうふや」、海鮮串燒。</div>
+        <div class="card-tags">
+          <span class="card-tag must">必逛街道</span>
+          <span class="card-tag free">票券折扣</span>
+          <span class="card-tag">江戶風情</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tip-box warn">
+    <div class="tip-title">⚠ 7/5 是週日</div>
+    託福橫丁週末會比較擁擠，<strong>建議 13:00 前到</strong>，赤福本店容易排隊。內宮一早人潮少最舒適。
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ===== DAY 5 ===== -->
+<section class="day-section" id="day5">
+  <div class="day-header day5">
+    <div class="day-number">
+      <span class="day-text">DAY</span>
+      <span class="day-num">5</span>
+    </div>
+    <div class="day-info">
+      <h2>🎨 吉卜力公園一日遊</h2>
+      <div class="day-meta">
+        <span>📅 2026/7/6（週一）</span>
+        <span>📍 名古屋 → 愛・地球博紀念公園</span>
+        <span>⚠ 週二定休 → 週一 OK</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="tip-box warn">
+    <div class="tip-title">🎫 票券務必提前搶（5/10 開賣）</div>
+    吉卜力公園門票於入場前 2 個月的 <strong>10 日 14:00 日本時間（台灣 13:00）</strong>開賣。
+    7 月份 = <strong>5/10 台灣時間 13:00</strong> 開搶。建議：<br>
+    ① 提前 5 分鐘登入<strong>官方英文版網站</strong>（最便宜，海外旅客優先）<br>
+    ② 或 KKday／Klook 套裝票（不用搶但價格稍高）<br>
+    ③ 推薦「<strong>大散步券 Premium</strong>」可進五大園區 + 5 棟建築內部
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-time">08:00</div>
+      <div class="timeline-content">飯店早餐</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">09:00</div>
+      <div class="timeline-content">名古屋駅出發，搭 <strong>地下鐵東山線</strong>到藤之丘（約 30 分），轉 <strong>Linimo 磁浮列車</strong>到「愛・地球博紀念公園」站（約 15 分）<br>💰 約 ¥1,160/人</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">10:00</div>
+      <div class="timeline-content">抵達公園，先衝最熱門的 <strong>「魔女之谷」</strong>（霍爾的城堡、魔女之家內部）</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">11:30</div>
+      <div class="timeline-content">🌳 <strong>動動力森林</strong>（小月與小梅之家、大龍貓巴士站）</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">13:00</div>
+      <div class="timeline-content">☕ <strong>青春之丘</strong>（地球屋、貓咪事務所）+ 午餐</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">14:00</div>
+      <div class="timeline-content">⚔️ <strong>魔法之里</strong>（魔法公主場景）</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">15:00</div>
+      <div class="timeline-content">🏛️ <strong>吉卜力大倉庫</strong>（神隱少女湯屋、天空之城場景，必逛紀念品店「冒險飛行團」）<br>💡 14:30 後幾乎不需要排隊</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">17:00</div>
+      <div class="timeline-content">閉園返回名古屋，搭 Linimo + 地下鐵原路回</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">19:00</div>
+      <div class="timeline-content">名古屋駅或榮商圈晚餐：味噌烏龍麵 / 世界的山將手羽先 / 矢場とんかつ</div>
+    </div>
+  </div>
+
+  <div class="attraction-grid">
+    <div class="attraction-card">
+      <div class="card-img-wrap">
+        <img src="https://ghibli-park.jp/img/area/area01.jpg" alt="吉卜力大倉庫" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Ghibli_Park_Grand_Warehouse.jpg/800px-Ghibli_Park_Grand_Warehouse.jpg'">
+        <div class="card-time-badge">2H</div>
+        <div class="card-img-overlay">
+          <span class="card-category theme">主題園區</span>
+          <div class="card-title-on-img">吉卜力大倉庫</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">吉卜力大倉庫</div>
+        <div class="card-name-jp">ジブリの大倉庫</div>
+        <div class="card-desc">室內主園區，神隱少女湯屋、天空之城原寸場景、紀念品店「冒險飛行團」，下雨天也能玩。</div>
+        <div class="card-tags">
+          <span class="card-tag must">必去</span>
+          <span class="card-tag">室內展館</span>
+          <span class="card-tag">紀念品</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="attraction-card">
+      <div class="card-img-wrap">
+        <img src="https://ghibli-park.jp/img/area/area04.jpg" alt="魔女之谷" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Ghibli_Park_Valley_of_Witches.jpg/800px-Ghibli_Park_Valley_of_Witches.jpg'">
+        <div class="card-time-badge">1.5H</div>
+        <div class="card-img-overlay">
+          <span class="card-category theme">主題園區</span>
+          <div class="card-title-on-img">魔女之谷</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">魔女之谷</div>
+        <div class="card-name-jp">魔女の谷</div>
+        <div class="card-desc">最新最熱門園區（2024 開幕），霍爾的城堡實體建築、魔女宅急便麵包店、適合拍照打卡。</div>
+        <div class="card-tags">
+          <span class="card-tag must">最熱門</span>
+          <span class="card-tag">霍爾的城堡</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="attraction-card">
+      <div class="card-img-wrap">
+        <img src="https://ghibli-park.jp/img/area/area02.jpg" alt="青春之丘" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Ghibli_Park_Hill_of_Youth.jpg/800px-Ghibli_Park_Hill_of_Youth.jpg'">
+        <div class="card-time-badge">1H</div>
+        <div class="card-img-overlay">
+          <span class="card-category theme">主題園區</span>
+          <div class="card-title-on-img">青春之丘・地球屋</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">青春之丘</div>
+        <div class="card-name-jp">青春の丘</div>
+        <div class="card-desc">地球屋、貓咪事務所（耳をすませば、貓的報恩取景），復古浪漫氛圍。</div>
+        <div class="card-tags">
+          <span class="card-tag">地球屋</span>
+          <span class="card-tag">貓咪事務所</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ===== DAY 6 ===== -->
+<section class="day-section" id="day6">
+  <div class="day-header day6">
+    <div class="day-number">
+      <span class="day-text">DAY</span>
+      <span class="day-num">6</span>
+    </div>
+    <div class="day-info">
+      <h2>🛍️ 購物日：金平糖 ✕ 動漫周邊 ✕ 服飾 ✕ 返程</h2>
+      <div class="day-meta">
+        <span>📅 2026/7/7（週二）</span>
+        <span>📍 名古屋駅 → 榮 → 大須 → 中部機場</span>
+        <span>🎒 行李寄飯店</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hotel-banner" style="background:linear-gradient(135deg,#8e44ad,#9b59b6);">
+    <div class="hotel-icon">🍬</div>
+    <div class="hotel-info">
+      <h4>關鍵任務：兒子的金平糖採購</h4>
+      <p>JR 名古屋高島屋 B1F「銘菓百選」可買到日本唯一金平糖專門店「<strong>緑寿庵清水</strong>（1847 創業）」的金平糖，約 50 種風味。順路！</p>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-time">09:30</div>
+      <div class="timeline-content">飯店退房，行李寄放飯店或名古屋駅大型置物櫃（建議 ESCA 地下街銀色時計前）</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">09:45–10:30</div>
+      <div class="timeline-content">🍬 <strong>JR 名古屋高島屋 B1F「銘菓百選」</strong>：購買緑寿庵清水金平糖（兒子的願望！）+ 順逛 DEPACHIKA 名古屋特產（赤福、鰻魚派等伴手禮）</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">10:30</div>
+      <div class="timeline-content">搭 <strong>地下鐵東山線</strong>到「榮」站（建議買名古屋市內一日券 ¥870）</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">10:45–12:30</div>
+      <div class="timeline-content">🛍️ <strong>名古屋 PARCO（榮）</strong>：東館 4F Animate（動漫周邊）、3F 角色商店（Pokemon Center、Snoopy Town、Hello Kitty、Kirby Café、Rilakkuma Store、JUMP Shop），服飾品牌（BEAMS、Urban Research、niko and...）</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">12:30</div>
+      <div class="timeline-content">步行到 <strong>大須觀音商店街</strong>（從矢場町站走 5-7 分）</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">13:00–17:00</div>
+      <div class="timeline-content">🎮 <strong>大須商店街</strong>（名古屋的「秋葉原＋裏原宿」）：午餐（紅豆鯛魚燒、台灣美食街、大須炸雞）+ <strong>Mandarake</strong>（中古動漫聖殿）+ 古著街（仁王門通、東仁王門通）+ 驚安殿堂大須店</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">17:00</div>
+      <div class="timeline-content">搭地鐵回榮，到 <strong>驚安殿堂榮本店</strong>做最後採購（24 小時，免稅滿 ¥5,000）</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">18:30</div>
+      <div class="timeline-content">榮商圈晚餐：味噌烏龍麵、世界的山將手羽先</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">19:30</div>
+      <div class="timeline-content">搭地鐵回名古屋駅，順路逛 <strong>名鐵百貨店男士館 1F「名鐵商店」</strong>（買名古屋限定金平糖）</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">20:00</div>
+      <div class="timeline-content">取行李，搭 <strong>名鐵 μ-SKY</strong> 到中部機場（28 分鐘，¥1,430/人）</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">20:45</div>
+      <div class="timeline-content">抵達 <strong>中部國際機場</strong>，辦理樂桃自助 QR Code 報到</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">22:45</div>
+      <div class="timeline-content">✈ <strong>樂桃 MM723 起飛</strong>，01:25+1 抵達桃園</div>
+    </div>
+  </div>
+
+  <div class="attraction-grid">
+    <div class="attraction-card">
+      <div class="card-img-wrap">
+        <img src="https://www.jr-takashimaya.co.jp/img/common/og_image.jpg" alt="JR 名古屋高島屋" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/JR_Central_Towers_2008.jpg/800px-JR_Central_Towers_2008.jpg'">
+        <div class="card-time-badge">45 分</div>
+        <div class="card-img-overlay">
+          <span class="card-category food">伴手禮</span>
+          <div class="card-title-on-img">JR 名古屋高島屋 B1F</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">緑寿庵清水（銘菓百選）</div>
+        <div class="card-name-jp">りょくじゅあんしみず</div>
+        <div class="card-desc">1847 年京都創業，<strong>日本唯一的金平糖專門店</strong>。約 50 種風味，包括水果、抹茶、酒類等高級口味，¥600-1,000+ 一袋。</div>
+        <div class="card-tags">
+          <span class="card-tag must">兒子指定</span>
+          <span class="card-tag">日本唯一</span>
+          <span class="card-tag">名古屋駅</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="attraction-card">
+      <div class="card-img-wrap">
+        <img src="https://nagoya.parco.jp/page/img/about/main.jpg" alt="名古屋 PARCO" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Nagoya_Parco.jpg/800px-Nagoya_Parco.jpg'">
+        <div class="card-time-badge">2H</div>
+        <div class="card-img-overlay">
+          <span class="card-category shop">百貨</span>
+          <div class="card-title-on-img">名古屋 PARCO</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">名古屋 PARCO（榮）</div>
+        <div class="card-name-jp">なごやパルコ</div>
+        <div class="card-desc">東館 4F Animate（動漫一站購齊）、3F 角色商店一條街（Pokemon Center、JUMP Shop、Kirby Café、Rilakkuma Store…）。</div>
+        <div class="card-tags">
+          <span class="card-tag must">動漫聖地</span>
+          <span class="card-tag">服飾品牌</span>
+          <span class="card-tag">榮站直達</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="attraction-card">
+      <div class="card-img-wrap">
+        <img src="https://osu.co.jp/wp-content/uploads/2020/09/main.jpg" alt="大須商店街" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Osu_Shopping_District.jpg/800px-Osu_Shopping_District.jpg'">
+        <div class="card-time-badge">4H</div>
+        <div class="card-img-overlay">
+          <span class="card-category shop">商店街</span>
+          <div class="card-title-on-img">大須觀音商店街</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">大須商店街</div>
+        <div class="card-name-jp">おおす</div>
+        <div class="card-desc">名古屋的「秋葉原＋裏原宿」：<strong>Mandarake</strong>（中古鋼彈、絕版周邊、TCG 卡）、古著街（仁王門通、東仁王門通）、驚安殿堂大須店、台灣美食街。</div>
+        <div class="card-tags">
+          <span class="card-tag must">動漫古著</span>
+          <span class="card-tag">Mandarake</span>
+          <span class="card-tag">小吃天堂</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tip-box info">
+    <div class="tip-title">💡 7/7 重要提醒</div>
+    ① <strong>免稅消費滿 ¥5,000</strong> 記得帶護照辦退稅，封袋的商品出境前不可拆封<br>
+    ② <strong>樂桃 MM723 報到</strong>：日本機場是 QR Code 自助報到，到時間自動關櫃，請務必至少提前 1 小時到機場<br>
+    ③ <strong>名古屋一日券 ¥870</strong>：購物日會搭多次地鐵，買一日券划算
+  </div>
+</section>
+
+</div><!-- /.main-content -->
+
+<!-- ===== HOTEL NAGOYA ===== -->
+<section class="hotel-section" id="hotel-nagoya">
+  <div class="section-title">
+    <h2 style="color:white;">🏨 名古屋飯店推薦（7/5 入住・7/7 退房）</h2>
+    <p class="sub">機場便利性優先 ｜ 預算 ≤ NT$6,000/晚 (≈ ¥29,400) ｜ 4 大人 ｜ 距名鐵名古屋駅 ≤ 10 分</p>
+  </div>
+
+  <div style="max-width:900px;margin:0 auto 24px;background:rgba(255,255,255,0.10);border-radius:14px;padding:20px;backdrop-filter:blur(10px);">
+    <h4 style="color:#f1c40f;margin-bottom:10px;font-size:1.05rem;">🚆 飯店選址邏輯</h4>
+    <p style="font-size:0.92rem;line-height:1.8;">
+      唯一最快路線到中部機場 = <strong>名鐵 μ-SKY 從「名鐵名古屋駅」直達（28 分）</strong>。
+      所以飯店離名鐵名古屋駅越近、拖行李越輕鬆越好。
+      7/5 從伊勢過來、7/7 要回機場，<strong>兩段都直接連接名古屋駅</strong>，省去拖行李轉車的麻煩。
+    </p>
+  </div>
+
+  <div class="hotel-rec-grid">
+    <!-- 第一級 -->
+    <div class="hotel-rec-card recommended">
+      <div class="hotel-rec-badge">🥇 首選</div>
+      <div class="hotel-rec-name">JR Gate Tower Hotel</div>
+      <div class="hotel-rec-name-jp">名古屋JR門樓酒店 ⭐ 4.4</div>
+      <div class="hotel-rec-row"><span class="label">📍 位置</span>JR 名古屋駅樓上 15-25F</div>
+      <div class="hotel-rec-row"><span class="label">🚆 機場</span>下樓 5 分到名鐵 → 28 分到機場</div>
+      <div class="hotel-rec-row"><span class="label">💰 4 人</span><span class="hotel-rec-price">¥25,000–35,000<small>/晚</small></span></div>
+      <div class="hotel-rec-tags">
+        <span class="hotel-rec-tag">同棟有高島屋</span>
+        <span class="hotel-rec-tag">買金平糖最近</span>
+        <span class="hotel-rec-tag">UNIQLO/Bic Camera</span>
+      </div>
+      <div class="hotel-rec-links">
+        <a class="hotel-rec-link booking" href="https://www.booking.com/hotel/jp/jr-gate-tower-hotel.html" target="_blank">Booking</a>
+        <a class="hotel-rec-link agoda" href="https://www.agoda.com/nagoya-jr-gate-tower-hotel" target="_blank">Agoda</a>
+        <a class="hotel-rec-link official" href="https://www.associa.com/jrg/" target="_blank">官網</a>
+      </div>
+    </div>
+
+    <div class="hotel-rec-card">
+      <div class="hotel-rec-name">名鐵 Grand Hotel</div>
+      <div class="hotel-rec-name-jp">名鉄グランドホテル ⭐ 4.0</div>
+      <div class="hotel-rec-row"><span class="label">📍 位置</span>名鐵名古屋駅樓上 11-18F</div>
+      <div class="hotel-rec-row"><span class="label">🚆 機場</span>下樓直接進剪票口（最近！）</div>
+      <div class="hotel-rec-row"><span class="label">💰 4 人</span><span class="hotel-rec-price">¥22,000–30,000<small>/晚</small></span></div>
+      <div class="hotel-rec-tags">
+        <span class="hotel-rec-tag">CP 值高</span>
+        <span class="hotel-rec-tag">家庭房空間大</span>
+        <span class="hotel-rec-tag">設施較舊</span>
+      </div>
+      <div class="hotel-rec-links">
+        <a class="hotel-rec-link booking" href="https://www.booking.com/hotel/jp/meitetsu-grand.html" target="_blank">Booking</a>
+        <a class="hotel-rec-link agoda" href="https://www.agoda.com/meitetsu-grand-hotel" target="_blank">Agoda</a>
+        <a class="hotel-rec-link official" href="https://www.meitetsu-gh.co.jp/" target="_blank">官網</a>
+      </div>
+    </div>
+
+    <div class="hotel-rec-card">
+      <div class="hotel-rec-name">Mitsui Garden Hotel Nagoya Premier</div>
+      <div class="hotel-rec-name-jp">三井花園飯店名古屋 Premier ⭐ 4.3</div>
+      <div class="hotel-rec-row"><span class="label">📍 位置</span>名古屋駅步行 5-10 分（地下道直通）</div>
+      <div class="hotel-rec-row"><span class="label">🚆 機場</span>地下道走 8 分到名鐵 → 28 分</div>
+      <div class="hotel-rec-row"><span class="label">💰 4 人</span><span class="hotel-rec-price">¥22,000–32,000<small>/晚</small></span></div>
+      <div class="hotel-rec-tags">
+        <span class="hotel-rec-tag">18F 大浴場</span>
+        <span class="hotel-rec-tag">城市夜景</span>
+        <span class="hotel-rec-tag">設施新穎</span>
+      </div>
+      <div class="hotel-rec-links">
+        <a class="hotel-rec-link booking" href="https://www.booking.com/hotel/jp/mitsui-garden-nagoya-premier.html" target="_blank">Booking</a>
+        <a class="hotel-rec-link agoda" href="https://www.agoda.com/mitsui-garden-hotel-nagoya-premier" target="_blank">Agoda</a>
+        <a class="hotel-rec-link official" href="https://www.gardenhotels.co.jp/nagoya-premier/" target="_blank">官網</a>
+      </div>
+    </div>
+
+    <div class="hotel-rec-card">
+      <div class="hotel-rec-name">Daiwa Roynet Hotel 名古屋太閤通口</div>
+      <div class="hotel-rec-name-jp">ダイワロイネット ⭐ 4.2</div>
+      <div class="hotel-rec-row"><span class="label">📍 位置</span>新幹線口步行 5 分</div>
+      <div class="hotel-rec-row"><span class="label">🚆 機場</span>步行 5 分到名鐵 → 28 分</div>
+      <div class="hotel-rec-row"><span class="label">💰 4 人</span><span class="hotel-rec-price">¥22,000–32,000<small>/晚</small></span></div>
+      <div class="hotel-rec-tags">
+        <span class="hotel-rec-tag">CP 值高</span>
+        <span class="hotel-rec-tag">1F 7-11</span>
+        <span class="hotel-rec-tag">2 間雙人房</span>
+      </div>
+      <div class="hotel-rec-links">
+        <a class="hotel-rec-link booking" href="https://www.booking.com/hotel/jp/daiwa-roynet-nagoya-taiko-dori-side.html" target="_blank">Booking</a>
+        <a class="hotel-rec-link agoda" href="https://www.agoda.com/daiwa-roynet-hotel-nagoya-taiko-dori-side" target="_blank">Agoda</a>
+        <a class="hotel-rec-link rakuten" href="https://travel.rakuten.co.jp/" target="_blank">樂天旅遊</a>
+      </div>
+    </div>
+
+    <div class="hotel-rec-card">
+      <div class="hotel-rec-name">Comfort Hotel 名古屋名駅南</div>
+      <div class="hotel-rec-name-jp">コンフォート ⭐ 4.4</div>
+      <div class="hotel-rec-row"><span class="label">📍 位置</span>名古屋駅步行 10 分</div>
+      <div class="hotel-rec-row"><span class="label">🚆 機場</span>步行 10 分到名鐵 → 28 分</div>
+      <div class="hotel-rec-row"><span class="label">💰 4 人</span><span class="hotel-rec-price">¥20,000–28,000<small>/晚</small></span></div>
+      <div class="hotel-rec-tags">
+        <span class="hotel-rec-tag">含早餐</span>
+        <span class="hotel-rec-tag">口碑佳</span>
+        <span class="hotel-rec-tag">2 間雙人房</span>
+      </div>
+      <div class="hotel-rec-links">
+        <a class="hotel-rec-link booking" href="https://www.booking.com/hotel/jp/comfort-nagoya-meieki-minami.html" target="_blank">Booking</a>
+        <a class="hotel-rec-link agoda" href="https://www.agoda.com/comfort-hotel-nagoya-meieki-minami" target="_blank">Agoda</a>
+      </div>
+    </div>
+
+    <div class="hotel-rec-card">
+      <div class="hotel-rec-name">APA Hotel 名古屋駅前南</div>
+      <div class="hotel-rec-name-jp">APAホテル ⭐ 4.2</div>
+      <div class="hotel-rec-row"><span class="label">📍 位置</span>名古屋駅步行 5 分（櫻通口）</div>
+      <div class="hotel-rec-row"><span class="label">🚆 機場</span>步行 5 分到名鐵 → 28 分</div>
+      <div class="hotel-rec-row"><span class="label">💰 4 人</span><span class="hotel-rec-price">¥18,000–26,000<small>/晚</small></span></div>
+      <div class="hotel-rec-tags">
+        <span class="hotel-rec-tag">最便宜</span>
+        <span class="hotel-rec-tag">2 間雙人房</span>
+        <span class="hotel-rec-tag">含大浴場</span>
+      </div>
+      <div class="hotel-rec-links">
+        <a class="hotel-rec-link booking" href="https://www.booking.com/hotel/jp/apa-nagoya-ekimae-minami.html" target="_blank">Booking</a>
+        <a class="hotel-rec-link agoda" href="https://www.agoda.com/apa-hotel-nagoya-ekimae-minami" target="_blank">Agoda</a>
+      </div>
+    </div>
+  </div>
+
+  <div style="max-width:900px;margin:30px auto 0;">
+    <div class="tip-box" style="background:rgba(255,255,255,0.95);">
+      <div class="tip-title">💡 訂房比價技巧</div>
+      ① 先在 <strong>Booking.com / Agoda</strong> 看房型和價格 → 確認有 4 人房 或 雙人房 ×2 間<br>
+      ② 再到飯店官網比價 → 常有「會員專屬價」、「早鳥優惠」、「連住折扣」<br>
+      ③ 距 7/5 還有 2 個月，建議先訂可<strong>免費取消</strong>的，找到更好再換<br>
+      ④ 4 大人通常訂 <strong>2 間雙人房</strong> 比 1 間 4 人家庭房便宜<br>
+      ⑤ 7 月初是日本暑假旺季 + 週末，熱門飯店請盡早訂！
+    </div>
+  </div>
+</section>
+
+<!-- ===== SUMMARY TABLE ===== -->
+<section class="summary-section" id="summary">
+  <div style="text-align:center;margin-bottom:30px;">
+    <h2 style="font-family:'Noto Serif TC',serif;font-size:1.8rem;color:var(--secondary);">📋 行程總覽快速對照表</h2>
+    <p style="color:var(--text-sub);font-size:0.92rem;">伊勢「抵達 + 離開」做伊勢市行程 ｜ 中段日去比較遠的鳥羽 + 志摩</p>
+  </div>
+  <div class="summary-table">
+    <table>
+      <thead>
+        <tr>
+          <th>日期</th>
+          <th>區域</th>
+          <th>主要行程</th>
+          <th>住宿</th>
+          <th>票券</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="day-cell">Day 1<br><span style="font-weight:400;color:var(--text-sub);">7/2 四</span></td>
+          <td class="area-cell">伊勢市・二見</td>
+          <td>抵達 NGO → 近鐵到伊勢市 → 寄行李 → <strong>外宮</strong> → 飯店接駁 → <strong>伊勢シーパラダイス</strong> → 夫婦岩夕陽</td>
+          <td>Castle Inn 伊勢夫婦岩</td>
+          <td>μ-SKY ¥1,430 + まわりゃんせ「ゆき」</td>
+        </tr>
+        <tr>
+          <td class="day-cell">Day 2<br><span style="font-weight:400;color:var(--text-sub);">7/3 五</span></td>
+          <td class="area-cell">二見・鳥羽</td>
+          <td><strong>夫婦岩日出 04:45</strong> → 鳥羽水族館 → 真珠島 → 鳥羽湾遊覽船 → <strong>伊勢忍者キングダム</strong></td>
+          <td>Castle Inn 伊勢夫婦岩</td>
+          <td>まわりゃんせ 全免費</td>
+        </tr>
+        <tr>
+          <td class="day-cell">Day 3<br><span style="font-weight:400;color:var(--text-sub);">7/4 六</span></td>
+          <td class="area-cell">志摩</td>
+          <td><strong>志摩スペイン村 Parque España</strong>（一日遊：ピレネー雲霄飛車 + 佛朗明哥秀 + 西班牙料理）</td>
+          <td>Castle Inn 伊勢夫婦岩</td>
+          <td>まわりゃんせ 自由區間 + 一日券免費</td>
+        </tr>
+        <tr>
+          <td class="day-cell">Day 4<br><span style="font-weight:400;color:var(--text-sub);">7/5 日</span></td>
+          <td class="area-cell">伊勢市 → 名古屋</td>
+          <td>退房 → 寄行李 → <strong>內宮 + 託福橫丁</strong> → 取行李 → 近鐵 → 名古屋飯店</td>
+          <td>名古屋駅周邊</td>
+          <td>まわりゃんせ「かえり」</td>
+        </tr>
+        <tr>
+          <td class="day-cell">Day 5<br><span style="font-weight:400;color:var(--text-sub);">7/6 一</span></td>
+          <td class="area-cell">愛知（吉卜力）</td>
+          <td><strong>吉卜力公園一日遊</strong>：魔女之谷 + 動動力森林 + 青春之丘 + 大倉庫</td>
+          <td>名古屋駅周邊</td>
+          <td>地鐵+Linimo ¥1,160 + 吉卜力門票</td>
+        </tr>
+        <tr>
+          <td class="day-cell">Day 6<br><span style="font-weight:400;color:var(--text-sub);">7/7 二</span></td>
+          <td class="area-cell">名古屋・返程</td>
+          <td><strong>金平糖（高島屋）</strong> → 榮 PARCO → 大須商店街 → 取行李 → μ-SKY → MM723</td>
+          <td>—</td>
+          <td>地鐵一日券 ¥870 + μ-SKY ¥1,430</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ===== CHECKLIST ===== -->
+<section class="checklist-section" id="checklist">
+  <div style="text-align:center;margin-bottom:30px;">
+    <h2 style="font-family:'Noto Serif TC',serif;font-size:1.8rem;color:var(--secondary);">✅ 行前準備清單</h2>
+    <p style="color:var(--text-sub);font-size:0.92rem;">越早處理越穩，特別是吉卜力門票！</p>
+  </div>
+  <div class="checklist-wrapper">
+    <div class="checklist-card urgent">
+      <h4>🎫 吉卜力公園門票</h4>
+      <p><strong>5/10 台灣時間 13:00 開搶 7 月票</strong>（日本時間 14:00）。提前 5 分鐘登入<a href="https://ghibli-park.jp/en/" target="_blank" style="color:var(--primary);">官方英文版網站</a>守候，建議「大散步券 Premium」可進五大園區+5 棟建築。搶不到再用 KKday/Klook 套票。</p>
+    </div>
+    <div class="checklist-card urgent">
+      <h4>🏨 名古屋飯店</h4>
+      <p>7 月暑假 + 週末旺季，越快越好。建議先訂 <strong>可免費取消</strong> 的房型，找到更好再換。<br>4 大人通常訂 2 間雙人房比 1 間 4 人房便宜。</p>
+    </div>
+    <div class="checklist-card">
+      <h4>🎫 まわりゃんせ ¥12,100×4 = ¥48,400</h4>
+      <p>乘車日 1 個月前開賣（即 6/2 起）。建議在 <a href="https://www.kintetsu.co.jp/senden/Railway/Ticket/mawaryanse/" target="_blank" style="color:var(--primary);">近鐵官網</a> 預訂或抵達當天到近鐵名古屋駅窗口購買。</p>
+    </div>
+    <div class="checklist-card">
+      <h4>🚆 近鐵特急指定席</h4>
+      <p>出發前 1 個月可線上預訂，熱門時段（7/2 早上 + 7/5 傍晚）建議當下就指定座位，避免熱門時段沒位。</p>
+    </div>
+    <div class="checklist-card">
+      <h4>📞 Email 飯店確認 3 件事</h4>
+      <p>① 7/2 下午伊勢市駅 → 飯店免費接駁巴士班次與預約<br>② 退房後行李寄送/代收服務<br>③ 是否為 まわりゃんせ 指定配送飯店</p>
+    </div>
+    <div class="checklist-card">
+      <h4>💳 IC 卡 / 現金</h4>
+      <p>抵達後在中部機場購買 manaca / Suica 等 IC 卡，名古屋地鐵、JR、近鐵都通用。建議帶 ¥5-10 萬日圓現金應急。</p>
+    </div>
+    <div class="checklist-card">
+      <h4>🎟️ 鳥羽水族館 / 真珠島</h4>
+      <p>已包含在 まわりゃんせ 內，<strong>不需另買</strong>。但若不買 まわりゃんせ，可在 KKday/Klook 比現場便宜。</p>
+    </div>
+    <div class="checklist-card">
+      <h4>📱 退稅須知</h4>
+      <p>免稅消費滿 ¥5,000 記得帶 <strong>護照</strong> 辦退稅，封袋的商品出境前不可拆封。驚安殿堂、Animate、PARCO 都可現場退稅。</p>
+    </div>
+    <div class="checklist-card">
+      <h4>✈ 樂桃 MM723 報到</h4>
+      <p>日本機場 QR Code 自助報到，到時間自動關櫃。請務必<strong>至少提前 1 小時到中部機場</strong>（建議 19:30 從名古屋駅出發）。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-emoji">⛩️ 🌅 🐠 🛍️</div>
+  <p>
+    <strong>2026 伊勢志摩 × 名古屋 6 天 5 夜家族行</strong><br>
+    7 月 2 日 ～ 7 月 7 日　｜　大人 2 ＋ 中學生 2<br>
+    祝您一家人旅途愉快！🎌
+  </p>
+</footer>
+
+<script>
+  // Scroll fade-in animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.attraction-card, .hotel-rec-card, .checklist-card, .day-section').forEach(el => {
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
